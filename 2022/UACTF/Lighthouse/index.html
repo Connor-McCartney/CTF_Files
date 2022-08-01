@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lib/presets/p1.css">
+
+    <script type="text/javascript" src="dist/k1.js"></script>
+    <script type="text/javascript" src="dist/k2.js"></script>
+    <script type="text/javascript" src="dist/k3.js"></script>
+    <script type="text/javascript" src="dist/k4.js"></script>
+    <script type="text/javascript" src="dist/k5.js"></script>
+    <script type="text/javascript" src="dist/k6.js"></script>
+    <script type="text/javascript" src="dist/k7.js"></script>
+    <script type="text/javascript" src="dist/k8.js"></script>
+
+    <script type="text/javascript" src="lib/presets/p1.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lekton:400italic' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,700" rel="stylesheet"
+        type="text/css">
+    <style>
+        .p1 circle {
+            filter: url(#dropshadow);
+        }
+    </style>
+</head>
+
+<body style="background-image: url('assets/cod.jpg'); background-repeat: no-repeat; background-size: 100% 100%;   background-attachment: fixed; ">
+    <input type="button" onclick="check()" value="check">
+    <ul class="meme">
+        <li>
+            <input id="k1" class="preset1" type="range" min="0" max="28" data-width="300" data-height="300"
+                data-angleOffset="195" data-angleRange="330">
+        </li>
+        <li>
+            <input id="k2" class="preset1" type="range" min="0" max="28" data-width="300" data-height="300"
+                data-angleOffset="195" data-angleRange="330">
+        </li>
+        <li>
+            <input id="k3" class="preset1" type="range" min="0" max="28" data-width="300" data-height="300"
+                data-angleOffset="195" data-angleRange="330">
+        </li>
+        <li>
+            <input id="k4" class="preset1" type="range" min="0" max="28" data-width="300" data-height="300"
+                data-angleOffset="195" data-angleRange="330">
+        </li>
+        <li>
+            <input id="k5" class="preset1" type="range" min="0" max="28" data-width="300" data-height="300"
+                data-angleOffset="195" data-angleRange="330">
+        </li>
+        <li>
+            <input id="k6" class="preset1" type="range" min="0" max="28" data-width="300" data-height="300"
+                data-angleOffset="195" data-angleRange="330">
+        </li>
+        <li>
+            <input id="k7" class="preset1" type="range" min="0" max="28" data-width="300" data-height="300"
+                data-angleOffset="195" data-angleRange="330">
+        </li>
+        <li>
+            <input id="k8" class="preset1" type="range" min="0" max="28" data-width="300" data-height="300"
+                data-angleOffset="195" data-angleRange="330">
+        </li>
+    </ul>
+    <script type="text/javascript" src="dist/setup.js"></script>
+
+    <svg>
+        <filter id="dropshadow" height="150%" width="150%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+            <feOffset dx="0" dy="3" result="offsetblur" />
+            <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+        <filter id='inner-shadow'>
+
+            <!-- Shadow Offset -->
+            <feOffset dx='0' dy='5' />
+
+            <!-- Shadow Blur -->
+            <feGaussianBlur stdDeviation='5' result='offset-blur' />
+
+            <!-- Invert the drop shadow
+             to create an inner shadow -->
+            <feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse' />
+
+            <!-- Color & Opacity -->
+            <feFlood flood-color='black' flood-opacity='0.75' result='color' />
+
+            <!-- Clip color inside shadow -->
+            <feComposite operator='in' in='color' in2='inverse' result='shadow' />
+
+            <!-- Put shadow over original object -->
+            <feComposite operator='over' in='shadow' in2='SourceGraphic' />
+        </filter>
+    </svg>
+</body>
+
+</html>

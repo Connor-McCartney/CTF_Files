@@ -1,0 +1,63 @@
+body {
+  font-family: 'Titillium Web', sans-serif;
+  color: #f7f7f2;
+}
+
+p {
+  padding: 0 0 0 10px;
+}
+
+.meme {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+li:not(:first-child) {
+/*  border-left: solid 1px #FF4242; */
+}
+
+.row, .column {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+}
+
+.row {
+  width: 100%;
+}
+
+.row >*,
+.column >* {
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-box-flex: 1;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -moz-box-flex: 1;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  box-flex: 1;
+  box-align: center;
+  box-pack: center;
+}
+
+.column {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  padding: 10px;
+
+}
+
+.column {
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  box-align: center;
+  box-pack: center;
+}
